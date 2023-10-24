@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Lab_01</string>
+    <string name="button_default">Button</string>
+    <string name="text_view_default">Text</string>
 </resources>
