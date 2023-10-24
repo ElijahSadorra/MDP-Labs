@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
         ActivityMainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         CountingClass c =  new CountingClass();
-        c.setCountNum(501);
+        c.setCountNum(500);
         binding.setCounterXML(c);
 
 //        // Example 2:
