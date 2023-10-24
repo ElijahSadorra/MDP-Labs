@@ -12,3 +12,6 @@ There is no error catching and crashes easily
 
 Part 2:
 Dealing with Intents between two activities
+
+Part 3:
+Dealing with XML errors and fixing using string.xml and data binding to reduce boiler plate code
