@@ -5,4 +5,6 @@
         <item>Cat Two</item>
         <item>Furball Three</item>
     </string-array>
+    <string name="incrementValue">0</string>
+    <string name="incrementButton">Increment</string>
 </resources>

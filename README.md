@@ -12,3 +12,7 @@ Part 1: Sending data between multiple activities
 Part 2: Recycler view
 
 - Overwriting recycler view to show different images in a scrollable fashion
+
+Part 3: View model
+
+- Allowed view model to save instance of data, example here shown is when the screen is destroyed and recreated it keeps the same number.

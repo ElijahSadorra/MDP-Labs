@@ -4,6 +4,8 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -16,36 +18,64 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
+import java.util.Observable;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 
 public class MainActivity extends AppCompatActivity {
 
+    Button incrementButton;
+    TextView incrementText;
+
+    CounterViewModel viewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ArrayList<CatCard> catList = new ArrayList<CatCard>();
-        String[] catNames = getResources().getStringArray(R.array.cat_names);
+        viewModel = new ViewModelProvider(this).get(CounterViewModel.class);
+        incrementButton = (Button) findViewById(R.id.incrementButton);
+        incrementText = (TextView) findViewById(R.id.incrementText);
 
-        for (int i = 0; i < 3; i++) {
-            CatCard catCard = new CatCard();
-            catCard.resID = getResources().getIdentifier("@drawable/cat" + i, "drawable", getPackageName());
-            catCard.catName = catNames[i];
-            catList.add(catCard);
-        }
+        incrementText.setText(String.valueOf(viewModel.getCounter()));
 
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler);
+        viewModel.getCounter().observe(this, new Observer<Integer>() {
+            @Override
+            public void onChanged(Integer integer) {
+                incrementText.setText(String.valueOf(integer));
+            }
+        });
 
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        CatRecyclerViewAdapter adapter = new CatRecyclerViewAdapter(this, catList);
-        recyclerView.setAdapter(adapter);
+        incrementButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                viewModel.incrementCounter();
+            }
+        });
 
-
+        /**
+         *  Lab 02: Part 2
+         */
+//        ArrayList<CatCard> catList = new ArrayList<CatCard>();
+//        String[] catNames = getResources().getStringArray(R.array.cat_names);
+//
+//        for (int i = 0; i < 3; i++) {
+//            CatCard catCard = new CatCard();
+//            catCard.resID = getResources().getIdentifier("@drawable/cat" + i, "drawable", getPackageName());
+//            catCard.catName = catNames[i];
+//            catList.add(catCard);
+//        }
+//
+//        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler);
+//
+//        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+//        CatRecyclerViewAdapter adapter = new CatRecyclerViewAdapter(this, catList);
+//        recyclerView.setAdapter(adapter);
 
         /**
          * Lab 02: Part 1
@@ -67,8 +97,6 @@ public class MainActivity extends AppCompatActivity {
 //        });
 
     }
-
-
     /**
      * Lab 02: Part 1
      */
