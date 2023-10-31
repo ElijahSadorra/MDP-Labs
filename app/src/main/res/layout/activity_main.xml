@@ -10,21 +10,39 @@
         android:id="@+id/sendButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="274dp"
+        android:layout_marginBottom="273dp"
         android:text="Button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/diceSideInput"
+        app:layout_constraintVertical_bias="1.0" />
 
     <EditText
         android:id="@+id/diceSideInput"
-        android:layout_width="223dp"
-        android:layout_height="51dp"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="212dp"
+        android:layout_width="231dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="209dp"
+        android:layout_marginBottom="50dp"
         android:ems="10"
         android:inputType="number"
         android:text="Enter Dice Num: "
+        app:layout_constraintBottom_toTopOf="@+id/resultText"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/resultText"
+        android:layout_width="217dp"
+        android:layout_height="46dp"
+        android:layout_marginBottom="376dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Name"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/diceSideInput" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

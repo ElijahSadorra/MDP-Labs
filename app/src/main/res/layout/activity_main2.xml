@@ -31,6 +31,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
         android:layout_marginBottom="247dp"
+        android:onClick="onRoll"
         android:text="Roll"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -40,6 +41,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="57dp"
+        android:onClick="onButtonClicked"
         android:text="Ok"
         app:layout_constraintBaseline_toBaselineOf="@+id/rollButton"
         app:layout_constraintEnd_toEndOf="parent" />
