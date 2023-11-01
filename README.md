@@ -8,4 +8,6 @@ Different branches for each lab session. Please see the branch associated with t
 
 ### Lab 02: Completed
 
-### Lab 03: TODO
+### Lab 03: Completed
+
+### Lab 04: TODO
