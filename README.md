@@ -6,4 +6,4 @@ A repo to store MDP Lab to ensure seamless development between home pc, laptop a
 
 Part 1: Threads
 
-- TODO
+- Create a thread seperate from main UI thread, to download and generate a cat image

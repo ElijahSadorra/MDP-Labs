@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Lab_03</string>
+    <string name="defaultButton">Button</string>
+    <string name="rollInput">Enter a number to roll dice</string>
+    <string name="rollButton">Roll!</string>
+    <string name="catButton">Press for Cats!</string>
+    <string name="hints">Enter value</string>
 </resources>
